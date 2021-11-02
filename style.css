@@ -1,0 +1,288 @@
+body, html {
+    height: 100%;
+}
+  
+* {
+    box-sizing:border-box;
+    padding: 2px;
+    margin: 0%;
+}
+  
+/* background image  */
+#background {
+    background-image: url("https://wallpaperaccess.com/full/1145728.jpg");
+    filter: blur(3px);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+/* ---------------------------------------Digital clock block ------------------------------------------------ */
+
+/* box for digital clock */
+#box {
+    background-color: rgba(255, 255, 255, 0.6); 
+    color: white;
+    font-weight: bold;
+    border: 3px solid black;
+    position: absolute;
+    border-radius: 15px;
+    top: 30%;
+    left: 65%;
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    width: 30%;
+    min-width: 350px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* main time heading display */
+h1{
+    font-size: 40px;
+    font-family: sans-serif;
+    width: 120%;
+    border: 2px solid #f1f1f1;
+    transform: translate(-8%, 0%);
+    background-color: black;
+    border-radius: 10px;
+    z-index: 3;
+    padding: 5px;
+}
+
+
+/* start stop restart buttons */
+#buttons button {
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2, 214, 251, 0.548) 100%);
+    border: black solid 1px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 40px 10px 0px;
+}
+#buttons button span {
+    position: relative;
+    display: block;
+}
+#buttons button:hover{
+    background: rgb(0, 253, 253);
+    padding: 10px;
+    box-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+
+
+/* --------------------------------------------Lap List div------------------------------------------------------- */
+#laps-list{
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    /* transform: translate(-50%, -20%); */
+    z-index: 2;
+    padding: 20px;
+    /* background-color: red; */
+    border-radius: 25px;
+}
+
+
+/* lap button  */
+#lap{
+    border-radius: 25px;
+    font-size: 25px;
+    width: 100px;
+    padding: 8px;
+    margin-left: 145px;
+    background-color: red;
+    border: white 2px solid;
+}
+
+
+/* flex to hold all laps  */
+#flex{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 20px;
+    height: 65vh;
+}
+
+/* lap items */
+.lap-item{
+    background-color: rgb(233, 222, 222);
+    border-radius: 20px;
+    padding: 2px 50px;
+    margin-top: 2px;
+}
+
+/* lap spans */
+#flex span{
+    font-size: 25px;
+    /* color: white; */
+    
+}
+.times{
+    margin-left: 80px;
+}
+
+
+/* -------------------------------------------------------Analpog clock---------------------------------------------------------- */
+
+/* analog clock block  */
+.analog{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    border: white dotted 3px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    /* background: linear-gradient(white,rgb(39, 230, 255),rgb(89, 255, 89) 90%) ; */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Horlo%C4%9Do_001.svg/300px-Horlo%C4%9Do_001.svg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: burlywood;
+}
+
+
+/* all divs under analog  */
+.analog>div{
+    padding: 0%;
+    width: 2px;
+    /* border: 1px solid white; */
+    z-index: 5;
+    transform-origin: bottom center;
+    position: absolute;
+    left: 50%;
+}
+
+/* spin animation for all hand */
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+
+/* Mili Second hand clock  */
+.msclock{
+    height: 80px;
+    top: 45px;
+    background-color: rgb(255, 0, 0);
+}
+
+/* secoun hand clock */
+.secclock{
+    height: 65px;
+    top: 60px;
+    background-color: rgb(0, 26, 255);
+    
+}
+
+/* min hand click */
+.minclock{
+    height: 40px;
+    top: 85px;
+    background-color: rgb(0, 0, 0);
+
+}
+
+
+
+
+/* CSS for screen size less 450px */
+
+@media only screen and (max-width:450px){
+
+    /* analog clock box  */
+    .analog{
+        left: 50%;
+        top: 5%;
+        height: 150px;
+        width: 150px;
+        transform: translate(-50%, 0%);
+    }
+    /* mili sec hand size reduce  */
+    .msclock{
+        height: 50px;
+        top: 25px;
+    }
+
+     /* sec hand size reduce  */
+    .secclock{
+        height: 40px;
+        top: 35px;
+    }
+
+
+     /* min hand size reduce  */
+    .minclock{
+        height: 30px;
+        top: 45px;
+    }
+
+    /* digital clock box  */
+    #box {
+        left: 50%;
+        min-width: 300px;
+        padding: 10px;
+        transform: translate(-50%, 0%);
+    }
+    
+    h1{
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    /* buttons  */
+    #buttons button {
+        width: 70px;
+        height: 30px;
+        margin: 10px 5px 0px;
+        font-size: 10px;
+    }
+
+    /* lap list */
+    #laps-list{
+        top: 50%;
+        left: 50%;
+        width: 350px;
+        transform: translate(-50%, 0%);
+        padding: 5px;
+        border-radius: 25px;
+    }
+    
+    /* lap buttons */
+    #lap{
+        border-radius: 25px;
+        font-size: 12px;
+        width: 80px;
+        padding: 2px;
+        margin-left: 130px;
+    }
+    
+
+    /* flex for laps  */
+    #flex{
+        padding: 10px;
+        height: 35vh;
+    }
+    
+    .lap-item{
+        border-radius: 10px;
+        padding: 2px 30px;
+        margin-top: 2px;
+    }
+
+    #flex span{
+        font-size: 15px;
+    }
+
+    .times{
+        margin-left: 100px;
+    }
+
+}
